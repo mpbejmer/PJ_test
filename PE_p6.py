@@ -4,8 +4,15 @@ import numpy as np
 
 n = 3
 
-def SumOfSquares(n):
+def sumofsquares(n):
+    if n == 1:
+        return 1
+    return n*n + sumofsquares(n-1)
 
+def squareofsums(n):
+    sum = n*(n+1)//2
+    return sum*sum
 
-def SquareOfSums(n):
-    
+number = 100
+answer = squareofsums(number) - sumofsquares(number)
+print("Square of sum minus sum of squares : ", answer)
